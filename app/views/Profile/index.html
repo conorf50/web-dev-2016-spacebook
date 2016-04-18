@@ -1,0 +1,27 @@
+#{extends 'main.html' /}
+#{set title:'Profile' /}
+
+<nav class="ui menu"> 
+<div class="item">
+ <img class="ui small image" id="logo" src="/public/images/logo.png">
+ </div>
+
+   <a class="ui item" href="/home">Home</a>
+    <a class="item" href="/members">Members</a>
+     <a class="active item" href="/profile"> Back to Profile  </a>
+    <a class="item" href="/blog">Blog</a>
+    <a class="ui item" href="/login">Logout</a> 
+</nav>
+
+
+<div class="ui two column grid segment" id="mainBackground">
+<h1 class="ui header" >${user.firstName} ${user.lastName}'s Profile</h1>
+  <div class="ui row">
+    <div class="column">
+      #{include "components/profileimages.html" /} 
+    </div>
+    <div class="column">
+      #{include "components/statusupdate.html" /}   
+    </div>
+  </div>
+</div>

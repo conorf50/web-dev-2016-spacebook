@@ -1,0 +1,32 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+
+<nav class="ui menu"> 
+<div class="item">
+ <img class="ui small image" id="logo" src="/public/images/logo.png">
+ </div>
+
+   <a class="ui active item" href="/home">Home</a>
+    <a class="item" href="/members">Members</a>
+    <a class="item" href="/profile">Profile</a>
+    <a class="item" href="/blog">Blog</a>
+    <a class="item" href="/login">Logout</a>
+</nav>
+
+
+<section class="ui container"id="mainBackground">
+  <h2 class="ui header">SpaceBook: Home page for ${user.firstName} ${user.lastName}</h2>
+  <div class="ui two column grid segment"id="mainBackground">
+    <div class="ui row">
+      <div class="ui column">
+       #{include "components/friends.html" /} 
+       </div>
+       
+        <div class="ui column">
+      #{include "components/messages.html" /} 
+    </div>
+    </div>
+    </div>
+    </section>
+ 
