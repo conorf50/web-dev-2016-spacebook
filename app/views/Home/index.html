@@ -2,17 +2,31 @@
 #{set title:'Home' /}
 
 
-<nav class="ui menu"> 
+<div class="ui fluid white segment">
+<nav class="ui fluid borderless secondary pointing menu"> 
 <div class="item">
  <img class="ui small image" id="logo" src="/public/images/logo.png">
  </div>
 
    <a class="ui active item" href="/home">Home</a>
-    <a class="item" href="/members">Members</a>
-    <a class="item" href="/profile">Profile</a>
-    <a class="item" href="/blog">Blog</a>
-    <a class="item" href="/login">Logout</a>
-</nav>
+    <a class="ui item" href="/members">Members</a>
+    <a class="ui item" href="/blog">Blog</a>
+    
+		 <div class="ui grey right dropdown item">
+		 <img class="ui avatar image" src="/profile/getpicture/${user.id}">
+    ${user.firstName}
+    <div class="ui fluid stackable grey menu">
+     <div class="header">OPTIONS</div>
+      <a class="item" href="/profile">Profile</a>
+      <a class="item">Settings</a>
+      <a class="ui inverted red button" href="/login">Logout</a>
+    </div>
+  </div>
+		
+ </div>
+ </nav>
+ </div>
+
 
 
 <section class="ui container"id="mainBackground">
