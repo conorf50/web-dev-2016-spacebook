@@ -1,31 +1,36 @@
-<section class="ui stacked segment">
-  <h2 class="ui header">Messages</h4>
-  #{if user.inbox.size() > 0}
-    <table class="ui table segment">
-      <thead>
-        <tr>
-          <th>From</th>
-          <th></th>
-          <th>Message</th>
-        </tr>
-      </thead>
-      <tbody>
-        #{list items:user.inbox, as:'message'}
-          <tr>
-            <td>
-              <div class="ui small image">
-                <img src="/profile/getpicture/${message.from.id}">
-              </div>
-            </td>
-            <td>
-               <a href="/publicprofile/${message.from.id}"> ${message.from.firstName}</a>
-             </td>
-             <td> 
-                ${message.messageText}
-              </td>
-          </tr>
-        #{/list}
-      </tbody>
-    </table>  
-  #{/if} 
-</section>
+<section class="ui fluid selection dropdown">
+
+	<h2 class="ui header">Messages</h2>
+	<div class="menu">
+		<div class="item">
+			#{if user.inbox.size() > 0}
+			<table class="ui table segment">
+				<thead>
+					<tr>
+						<th>From</th>
+						<th></th>
+						<th>Message</th>
+					</tr>
+				</thead>
+				<tbody>
+					#{list items:user.inbox, as:'message'}
+					<tr>
+						<td>
+							<div class="ui small image">
+								<img src="/profile/getpicture/${message.from.id}">
+							</div>
+						</td>
+						<td>
+							<a href="/publicprofile/${message.from.id}"> ${message.from.firstName}</a>
+						</td>
+						<td> 
+							${message.messageText}
+						</td>
+					</tr>
+					#{/list}
+				</tbody>
+			</table>  
+			#{/if} 
+		</div>
+	</div>
+		</section>

@@ -15,6 +15,8 @@ public class User extends Model
 {
   public String firstName;
   public String lastName;
+  public String username;
+
   public String email;
   public String password;
   public String statusText;
@@ -36,7 +38,7 @@ public class User extends Model
   public List<Post> posts = new ArrayList<Post>();
   
   
-  public User(String firstName, String lastName, String email, String password, int age, String nationality)
+  public User(String firstName, String lastName,String email, String password, int age, String nationality)
   {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -44,6 +46,7 @@ public class User extends Model
     this.password = password;
     this.age = age;
     this.nationality = nationality;
+    this.username = firstName;
   }
   
   public static User findByEmail(String email)

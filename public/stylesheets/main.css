@@ -1,13 +1,14 @@
 
 #background {
 	padding-top: 3%;
-	padding-bottom: 40%;
-	padding-left: 5%;
-	padding-right: 5%;
 	height: 100%;
 	background-color: #D0D0D0;
 	background-size: cover;
     background-repeat;
+}
+#messages {
+	overflow:hidden; 
+	overflow-y:scroll;
 }
 
 #mainBackground {

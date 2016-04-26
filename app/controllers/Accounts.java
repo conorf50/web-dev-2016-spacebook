@@ -31,10 +31,12 @@ public class Accounts extends Controller
   public static User getLoggedInUser()
   {
     User user = null;
+    User username = null;
     if (session.contains("logged_in_userid"))
     {
       String userId = session.get("logged_in_userid");
       user = User.findById(Long.parseLong(userId));
+
     }
     else
     {
@@ -43,10 +45,10 @@ public class Accounts extends Controller
     return user;
   }
   
-  public static void register(String firstName, String lastName, int age, String nationality, String email, String password, String password2)
+  public static void register(String firstName, String lastName, String username ,int age, String nationality, String email, String password, String password2)
   {
     Logger.info(firstName + " " + lastName + " " + email + " " + password);
-    User user = new User(firstName, lastName, email, password, age, nationality);
+    User user = new User(firstName, lastName, username, email, age, nationality);
     user.save();
     index();
   }

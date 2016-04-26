@@ -1,6 +1,9 @@
-<section class="ui stackable segment">
-  <h2 class="ui header">Friends (${user.friendships.size()})</h4>
-  <div class="ui list"> 
+<div class="ui fluid selection dropdown">
+  <h2 class="ui header">Friends (${user.friendships.size()})</h2>
+  <div class="menu">
+
+ 
+<div class="item">
     #{list items:user.friendships, as:'friendship'}
       <div class="ui item"> 
         <i class="user icon"></i>
@@ -9,4 +12,9 @@
       </div>
     #{/list}
   </div> 
-</section>  
+
+
+    </div>
+  </div>
+</div>
+</div>

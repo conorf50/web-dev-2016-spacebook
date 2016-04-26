@@ -22,7 +22,7 @@ public class UserTest extends UnitTest
   @Before
   public void setup()
   {
-    bob = new User("bob", "jones", "bob@jones.com", "secret",  20, "irish");
+    bob = new User("bob", "jones", "bob@jones.com", "secret",20, "irish");
     bob.save();
   }
   
