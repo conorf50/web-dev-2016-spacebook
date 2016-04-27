@@ -1,36 +1,44 @@
 <section class="ui fluid selection dropdown">
 
-	<h2 class="ui header">Messages</h2>
-	<div class="menu">
-		<div class="item">
-			#{if user.inbox.size() > 0}
-			<table class="ui table segment">
-				<thead>
-					<tr>
-						<th>From</th>
-						<th></th>
-						<th>Message</th>
-					</tr>
-				</thead>
-				<tbody>
-					#{list items:user.inbox, as:'message'}
-					<tr>
-						<td>
-							<div class="ui small image">
-								<img src="/profile/getpicture/${message.from.id}">
-							</div>
-						</td>
-						<td>
-							<a href="/publicprofile/${message.from.id}"> ${message.from.firstName}</a>
-						</td>
-						<td> 
-							${message.messageText}
-						</td>
-					</tr>
-					#{/list}
-				</tbody>
-			</table>  
-			#{/if} 
-		</div>
-	</div>
-		</section>
+  <h2 class="ui header">Messages</h2>
+  <div class="menu">
+    <div class="item">
+      #{if user.inbox.size() > 0}
+
+
+        <table class="ui table segment">
+          <thead>
+            <tr>
+              <th>From</th>
+              <th>Subject</th>
+              <th>Message</th>
+            </tr>
+          </thead>
+          <tbody>
+            #{list items:user.inbox, as:'message'}
+            
+            <tr>
+              <td>
+                <h4 class="ui image header">
+                  <img src="/profile/getpicture/${message.from.id}" class="ui mini rounded image"><a href="/publicprofile/${message.from.id}"> ${message.from.firstName}</a>
+                  </img>
+
+                    <div class="sub header">Online:  ${user.isOnline}
+                    </div>
+                  </div>
+                </h4>
+              </td>
+              <td>
+                <a href="/publicprofile/${message.from.id}"> ${message.subject}</a>
+              </td>
+              <td> 
+                ${message.messageText}
+              </td>
+            </tr>
+            #{/list}
+          </tbody>
+        </table>  
+        #{/if} 
+      </div>
+    </div>
+]</section>

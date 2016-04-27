@@ -38,7 +38,7 @@ public class MessageTest extends UnitTest
   @Test
   public void testCreateMessage()
   {
-    Message msg = new Message(mary, joan, "Hi there - how are you");
+    Message msg = new Message(mary, joan, "Hi there - how are you", null);
     msg.save();
 
     List<Message> joansMessages = Message.find("byTo", joan).fetch();
@@ -57,9 +57,9 @@ public class MessageTest extends UnitTest
   @Test
   public void testMultipleMessages()
   {
-    Message msg1 = new Message(mary, joan, "Hi there - how are you");
+    Message msg1 = new Message(mary, joan, "Hi there - how are you", null);
     msg1.save();
-    Message msg2 = new Message(mary, joan, "Where are you now?");
+    Message msg2 = new Message(mary, joan, "Where are you now?", null);
     msg2.save();
 
     List<Message> joansMessages = Message.find("byTo", joan).fetch();

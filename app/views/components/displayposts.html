@@ -1,9 +1,12 @@
 <section class="ui stacked segment">
   <h4 class="ui header">Published Posts</h4>
   #{list items:user.posts, as:'post'}
-    <h5 class="ui header"> ${post.title}</h5>
+    <h5 class="ui header"> Title: ${post.title}</h5>
     <p> 
       ${post.content}:
     </p>
+    <a href="/blog/deletepost/${post.id}" class="ui button red labeled icon"><i class="icon delete"></i> Delete </a>
+    #{include "components/blogcomments.html" /} 
+    
   #{/list}
 </section>

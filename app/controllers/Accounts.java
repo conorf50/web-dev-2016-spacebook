@@ -7,18 +7,23 @@ import models.*;
 
 public class Accounts extends Controller
 {
+	
+  public static boolean isOnline  = false;
   public static void signup()
   {
+	isOnline = true;  
     render();
   }
 
   public static void login()
   {
+	isOnline = true;
     render();
   }
 
   public static void logout()
   {
+	isOnline =false;
     session.clear();
     index();
   }
@@ -45,10 +50,11 @@ public class Accounts extends Controller
     return user;
   }
   
-  public static void register(String firstName, String lastName, String username ,int age, String nationality, String email, String password, String password2)
+  public static void register(String firstName, String lastName, String username ,int age, String nationality, String email, String password)
   {
     Logger.info(firstName + " " + lastName + " " + email + " " + password);
     User user = new User(firstName, lastName, username, email, age, nationality);
+    isOnline = true;
     user.save();
     index();
   }
@@ -61,6 +67,7 @@ public class Accounts extends Controller
     if ((user != null) && (user.checkPassword(password) == true))
     {
       Logger.info("Authentication successful");
+      isOnline = true;
       session.put("logged_in_userid", user.id);
       Home.index();
     }

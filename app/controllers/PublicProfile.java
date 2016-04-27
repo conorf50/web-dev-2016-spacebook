@@ -18,7 +18,7 @@ public class PublicProfile extends Controller
     render(user);
   }
 
-  public static void sendMessage(Long id, String messageText)
+  public static void sendMessage(Long id, String messageText, String subject)
   {
     User fromUser = Accounts.getLoggedInUser();;
     User toUser = User.findById(id);
@@ -28,7 +28,7 @@ public class PublicProfile extends Controller
         toUser.firstName + ' ' + toUser.lastName +": " +
         messageText);    
     
-    fromUser.sendMessage(toUser, messageText);
+    fromUser.sendMessage(toUser, messageText, subject);
     visit(id);
   }  
 }

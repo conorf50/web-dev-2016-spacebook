@@ -29,7 +29,7 @@ GET     /profile/getpicture/{id}                Profile.getPicture
 POST    /profile/uploadthumbnail/{id}           Profile.uploadThumbnail
 GET     /profile/getthumbnail/{id}              Profile.getThumbnail
 
-# Edit Detsils page
+# Edit Details page
 GET     /editprofile                            EditProfile.index
 POST    /editprofile/change                     EditProfile.change
 
@@ -40,6 +40,11 @@ POST    /publicprofile/sendmessage/{id}         PublicProfile.sendMessage
 # Blog
 GET   /blog                                     Blog.index
 POST  /blog/newpost                             Blog.newPost
+GET   /blog/deletepost/{postid}                 Blog.deletePost
+POST  /blog/sendcomment/{id}                    Blog.sendComment
+
+
+
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

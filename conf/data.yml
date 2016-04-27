@@ -41,3 +41,13 @@ Message(message2):
     from : lisa
     to   : homer
     messageText: 'Get me outta here!'
+    
+Message(message3):
+    from : marge
+    to   : homer
+    messageText: 'hello?'
+    
+Message(message4):
+    from : bart
+    to   : homer
+    messageText: 'Hi!'

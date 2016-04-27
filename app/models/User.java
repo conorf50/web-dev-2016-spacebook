@@ -3,6 +3,9 @@ package models;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import java.util.Collections;
+
+import controllers.Accounts;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,8 +37,15 @@ public class User extends Model
   @OneToMany(mappedBy = "from")
   public List<Message> outbox = new ArrayList<Message>();
   
+  @OneToMany(mappedBy = "to")
+  public List<Comments> comments = new ArrayList<Comments>();
+  
+ 
   @OneToMany
-  public List<Post> posts = new ArrayList<Post>();
+  public List<Post> posts = new ArrayList<Post>();  
+
+ 
+  public boolean isOnline;
   
   
   public User(String firstName, String lastName,String email, String password, int age, String nationality)
@@ -47,6 +57,7 @@ public class User extends Model
     this.age = age;
     this.nationality = nationality;
     this.username = firstName;
+    isOnline = false;
   }
   
   public static User findByEmail(String email)
@@ -57,7 +68,11 @@ public class User extends Model
   public boolean checkPassword(String password)
   {
     return this.password.equals(password);
-  }  
+  } 
+  
+  public boolean isOnline(){
+	  return Accounts.isOnline;
+  }
   
   public void befriend(User friend)
   {
@@ -83,12 +98,27 @@ public class User extends Model
     save();
   }  
   
-  public void sendMessage (User to, String messageText)
+  public void sendMessage (User to, String messageText, String subject)
   {
-    Message message = new Message (this, to, messageText);
+    Message message = new Message (this, to, messageText, subject);
     outbox.add(message);
     to.inbox.add(message);
     message.save();
-  }  
+  }
+
+public void sendComment(User to, String commentText) {
+	Comments comment = new Comments (this, to, commentText);
+	 to.comments.add(comment);
+	 comment.save();
+	
+}
+
+//  public void sendComment (User to, String comment)
+//  {
+//    Comment comment = new Comment (this, to, comment);
+//    outbox.add(message);
+//    to.inbox.add(message);
+//    message.save();
+//  }
   
 }

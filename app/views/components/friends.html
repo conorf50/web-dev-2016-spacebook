@@ -7,7 +7,7 @@
     #{list items:user.friendships, as:'friendship'}
       <div class="ui item"> 
         <i class="user icon"></i>
-        <a href="/publicprofile/${friendship.targetUser.id}"> ${friendship.targetUser.firstName} ${friendship.targetUser.lastName} </a>
+        <a href="/publicprofile/${friendship.targetUser.id}"> ${friendship.targetUser.firstName} ${friendship.targetUser.lastName} </a>Online now : ${user.isOnline}
          (<a href="/home/drop/${friendship.targetUser.id}"> drop </a>)
       </div>
     #{/list}
