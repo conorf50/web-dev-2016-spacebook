@@ -8,6 +8,8 @@ GET    /                                        Accounts.login
 # Accounts
 
 GET    /signup                                  Accounts.signup
+GET    /getloggedinuser                         Accounts.login
+
 GET    /login                                   Accounts.login
 GET    /logout                                  Accounts.logout
 POST   /authenticate                            Accounts.authenticate
@@ -42,6 +44,8 @@ GET   /blog                                     Blog.index
 POST  /blog/newpost                             Blog.newPost
 GET   /blog/deletepost/{postid}                 Blog.deletePost
 POST  /blog/sendcomment/{postid}                Blog.sendComment
+
+GET   /publicblog/{id}                          Blog.visit                              
 
 
 

@@ -113,12 +113,6 @@ public void sendComment(User to, String commentText) {
 	
 }
 
-//  public void sendComment (User to, String comment)
-//  {
-//    Comment comment = new Comment (this, to, comment);
-//    outbox.add(message);
-//    to.inbox.add(message);
-//    message.save();
-//  }
+
   
 }

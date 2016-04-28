@@ -1,0 +1,25 @@
+#{extends 'main.html' /}
+#{set title:'Public Blog' /}
+
+<div class="ui fluid white segment">
+<nav class="ui fluid borderless secondary pointing menu"> 
+<div class="item">
+ <img class="ui small image" id="logo" src="/public/images/bloglogo.png">
+ </div>
+
+   <a class="ui item" href="/home">Home</a>
+    <a class="item" href="/members">Members</a>
+    <a class="active item" href="/blog">Blog</a>
+    
+		 <div class="ui right item">
+      <a class="ui inverted green button" href="/login">Login</a>
+  </div>
+		
+ </div>
+ </nav>
+ </div>
+<h1 class="ui inverted teal block header" >Public blog for ${user.firstName}  </h1>
+<section class="ui segment">
+  
+      #{include "components/publicblogposts.html" /}
+</section>

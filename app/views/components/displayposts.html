@@ -1,6 +1,7 @@
 <section class="ui stacked segment">
   <h4 class="ui header">Published Posts</h4>
-  #{list items:user.posts, as:'post'}
+  #{if user.posts.size() > 0}
+  #{list items:user.posts.reverse(), as:'post'}
     <h5 class="ui header"> Title: ${post.title}</h5>
     <p> 
       ${post.content}:
@@ -9,4 +10,6 @@
     #{include "components/sendcomment.html" /} 
     
   #{/list}
+    #{/if}
+  
 </section>

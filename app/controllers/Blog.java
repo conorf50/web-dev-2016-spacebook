@@ -14,7 +14,7 @@ public class Blog  extends Controller
 {
   public static void index()
   {
-    User user = Accounts.viewBlog();
+    User user = Accounts.getLoggedInUser();
     render(user);
   }
   
@@ -46,7 +46,7 @@ public class Blog  extends Controller
   
   public static void visit(Long id)
   {
-    User currentUser = Accounts.getLoggedInUser();
+   // User currentUser = Accounts.getLoggedInUser();
     
     User user = User.findById(id);
     Logger.info("Just visiting the blog for " + user.firstName + ' ' + user.lastName);

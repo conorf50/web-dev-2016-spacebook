@@ -23,7 +23,10 @@ public class Accounts extends Controller
 
   public static void logout()
   {
-	isOnline =false;
+	User user = Accounts.getLoggedInUser();
+	
+	user.isOnline =false;
+	user.save();
     session.clear();
     index();
   }
@@ -36,7 +39,6 @@ public class Accounts extends Controller
   public static User getLoggedInUser()
   {
     User user = null;
-    User username = null;
     if (session.contains("logged_in_userid"))
     {
       String userId = session.get("logged_in_userid");
@@ -76,7 +78,8 @@ return null;  }
     if ((user != null) && (user.checkPassword(password) == true))
     {
       Logger.info("Authentication successful");
-      isOnline = true;
+      user.isOnline = true;
+      user.save();
       session.put("logged_in_userid", user.id);
       Home.index();
     }

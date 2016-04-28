@@ -1,0 +1,17 @@
+  <h4 class="ui centered header">Published Posts</h4>
+
+<section class="ui centered stacked segment">
+  #{if user.posts.size() > 0}
+  #{list items:user.posts.reverse(), as:'post'}
+  <div class="ui grey segment">
+    <h5 class="ui header"> Title: ${post.title}</h5>
+    <p> 
+      ${post.content}:
+    </p>
+        <h5 class="ui small header"> <a href="/login">Login</a>
+         to leave comments</h5>
+    </div>
+  #{/list}
+    #{/if}
+  
+</section>
