@@ -1,41 +1,67 @@
 #{extends 'main.html' /}
 #{set title:'Login to Spacebook' /}
 <div class="ui center aligned vertically divided grid" id="background">
-		<div class="two column row">
+  <div class="two column row">
 
-				<div class="column wide">
-				<section class="ui left segment" id="blogBackgound">
-				<section>
-				
-				  <p> Public blogs by some of our members:</p>
-				</section>
-				</section>
-				  </div>
-				  
-				<div class="column three wide" id="mainBackground">
-				<section>
-			     <img class="ui fluid image" id="logo" src="/public/images/logo.png">
-				
-				  <p> Enter your email and password to continue</p>
-				</section>
-				<section class="ui middle center aligned form segment" id=loginForm>
-				  <form action="/authenticate" method="POST">
-				    <div class="field">
-				      <label> Username: </label>
-				      <input type="text" name="email">
-				    </div>  
-				    <div class="field">
-				      <label>  Password: </label>
-				      <input type="password" name="password">
-				    </div>
-				    <button class="ui blue submit button">Login</button>
-				  </form>
-				  
-				</section>
-				 <a class="item" href="/signup"> Not a user? Sign up here  </a>
-				
-				</div>
-				
-				
-		 </div>
- </div>
+    <div class="column wide">
+      <section class="ui left segment" id="blogBackgound">
+        <section>
+
+          <p> Public blogs by some of our members:</p>
+  
+
+          <table class="ui very basic collapsing celled table">
+            <thead>
+              <tr><th>Author</th>
+                <th>Blog Title</th>
+                </tr></thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <h4 class="ui image header">
+                       
+                        <div class="content">
+                       
+                          <div class="sub header"><a href="/publicblog/{id}">View blog </a>         
+                          </div>
+                        </div>
+                      </h4></td>
+                      <td>
+                        
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+           
+              </section>
+            </section>
+          </div>
+
+          <div class="column three wide" id="mainBackground">
+            <section>
+              <img class="ui fluid image" id="logo" src="/public/images/logo.png">
+
+              <p> Enter your email and password to continue</p>
+            </section>
+            <section class="ui middle center aligned form segment" id=loginForm>
+              <form action="/authenticate" method="POST">
+                <div class="field">
+                  <label> Username: </label>
+                  <input type="text" name="email">
+                </div>  
+                <div class="field">
+                  <label>  Password: </label>
+                  <input type="password" name="password">
+                </div>
+                <button class="ui blue submit button">Login</button>
+              </form>
+
+            </section>
+            <a class="item" href="/signup"> Not a user? Sign up here  </a>
+
+          </div>
+
+
+        </div>
+      </div>

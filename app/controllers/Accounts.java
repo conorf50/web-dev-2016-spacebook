@@ -14,7 +14,12 @@ public class Accounts extends Controller
 	isOnline = true;  
     render();
   }
-
+  public static void visit(Long id)
+  {
+	 User user = User.findById(id);
+    Logger.info(" " + user.firstName + ' ' + user.lastName);
+    render(user);
+  }
   public static void login()
   {
 	isOnline = true;
@@ -53,13 +58,10 @@ public class Accounts extends Controller
   }
   
   
-  public static User viewBlog()
+  public static void viewBlog()
   {
-
-
-
-render();
-return null;  }
+	  render();
+  }
   
   public static void register(String firstName, String lastName, String username ,int age, String nationality, String email, String password)
   {
