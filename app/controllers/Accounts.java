@@ -50,6 +50,15 @@ public class Accounts extends Controller
     return user;
   }
   
+  
+  public static User viewBlog()
+  {
+
+
+
+render();
+return null;  }
+  
   public static void register(String firstName, String lastName, String username ,int age, String nationality, String email, String password)
   {
     Logger.info(firstName + " " + lastName + " " + email + " " + password);

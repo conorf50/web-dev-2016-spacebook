@@ -41,7 +41,7 @@ POST    /publicprofile/sendmessage/{id}         PublicProfile.sendMessage
 GET   /blog                                     Blog.index
 POST  /blog/newpost                             Blog.newPost
 GET   /blog/deletepost/{postid}                 Blog.deletePost
-POST  /blog/sendcomment/{id}                    Blog.sendComment
+POST  /blog/sendcomment/{postid}                Blog.sendComment
 
 
 

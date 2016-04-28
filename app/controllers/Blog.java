@@ -14,7 +14,7 @@ public class Blog  extends Controller
 {
   public static void index()
   {
-    User user = Accounts.getLoggedInUser();
+    User user = Accounts.viewBlog();
     render(user);
   }
   
@@ -53,14 +53,14 @@ public class Blog  extends Controller
     render(user);
   }
   
-  public static void sendComment(Long id, String commentText)
+  public static void sendComment(Long postid, String commentText)
   {
-    User fromUser = Accounts.getLoggedInUser();;
-    User toUser = User.findById(id);
+    User toUser = Accounts.getLoggedInUser();;
+    User fromUser = User.findById(postid);
     
-    Logger.info("Comment from user " + 
-        fromUser.firstName + ' ' + fromUser.lastName +" to " +
-        toUser.firstName + ' ' + toUser.lastName +": " +
+    Logger.info("Comment on " + 
+        toUser.firstName + ' ' +"'s blogs " +
+        fromUser.firstName + ' ' + fromUser.lastName +": " +
         commentText);    
     
     fromUser.sendComment(toUser, commentText);
