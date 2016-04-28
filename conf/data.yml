@@ -19,6 +19,7 @@ User(homer):
     following: 
               - marge
               - lisa
+              - maggie
 
 User(bart):
     firstName: Bart
@@ -51,3 +52,80 @@ Message(message4):
     from : bart
     to   : homer
     messageText: 'Hi!'
+    
+Friendship(friend1):
+ sourceUser: homer
+ targetUser: marge
+ 
+Friendship(friend2):
+ sourceUser: homer
+ targetUser: maggie
+ 
+Friendship(friend3):
+ sourceUser: marge
+ targetUser: homer 
+
+Friendship(friend4):
+ sourceUser: homer
+ targetUser: bart
+ 
+Friendship(friend5):
+ sourceUser: bart
+ targetUser: lisa
+
+User(homer):
+ firstName: Homer
+ lastName: Simpson
+ email: homer@simpson.com
+ password: secret
+ friendships:
+ - friend1
+ - friend2
+
+User(lisa):
+ firstName: Lisa
+ lastName: Simpson
+ email: lisa@simpson.com
+ password: secret
+ friendships:
+ - friend3
+ - friend2
+ - friend1 
+
+User(homer):
+ firstName: Homer
+ lastName: Simpson
+ email: homer@simpson.com
+ password: secret
+ friendships:
+ - friend1
+ - friend2
+ - friend4
+ 
+ User(bart):
+ firstName: Bart
+ lastName: Simpson
+ email: bart@simpson.com
+ password: secret
+ friendships:
+ - friend3
+ - friend2
+ - friend1
+ - friend5 
+
+User(homer):
+ firstName: Homer
+ lastName: Simpson
+ email: homer@simpson.com
+ password: secret
+ friendships:
+ - friend1
+ - friend2
+
+User(marge):
+ firstName: Marge
+ lastName: Simpson
+ email: marge@simpson.com
+ password: secret
+ friendships:
+ - friend3    
